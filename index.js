@@ -23,7 +23,8 @@ while(entrada != "ESC"){
     entrada = prompt("Ingrese X...");
 } */
 
-let entrada = prompt("Ingrese el usuario");
+//ENTREGA 1 - CILOS e ITERACIONES//
+/* let entrada = prompt("Ingrese el usuario");
 
 while(entrada != "mailen"){
     alert("usuario incorrecto");
@@ -32,3 +33,49 @@ while(entrada != "mailen"){
 }
 
 alert("bienvenida!!");
+ */
+
+/* function saludar(){
+    let nombre = prompt("Ingrese su nombre");
+    let mensaje = `Hola ${nombre}!!, bienvenidx a Halawai`;
+
+    alert(mensaje);
+}
+
+saludar();
+ */
+
+//FUNCIONES
+/* function calculadora(num1, operacion, num2){
+    switch(operacion){
+        case "+":
+            return num1 + num2;
+            breack;
+        case "-":
+            return num1 - num2;
+            breack;
+        case "*":
+            return num1 * num2;
+            breack;
+        case "/":
+            return num1 / num2;
+            breack;
+        default:
+            return "operacion no disponible";
+            breack;
+    }
+}
+
+console.log(calculadora(3, "+", 4)); */
+
+
+//DESAFIO ENTREGABLE Nª 1 - SIMULADOR INTERACTIVO - PRECIO TOTAL PROMO HH - 
+let suma = (a,b) => a + b
+let resta = (a,b) => a - b
+
+let descuentoHH = precio => resta / 2
+let producto = prompt("Ingrese el precio del producto");
+
+let total = resta(producto, descuentoHH);
+console.log(alert(total));
+
