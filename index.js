@@ -68,6 +68,8 @@ saludar();
 
 console.log(calculadora(3, "+", 4)); */
 
+
+
 //DESAFIO ENTREGABLE Nª 1 - SIMULADOR INTERACTIVO - PRECIO TOTAL de PRODUCTO
 /* let suma = (a,b) => a + b
 let resta = (a,b) => a - b
@@ -79,8 +81,9 @@ let total = resta(precio, descuentoHH);
 alert(total);
  */
 
-//DESAFIO ENTREGABLE Nª 1 - SIMULADOR INTERACTIVO - PRECIO TOTAL de PRODUCTOS
 
+//DESAFIO ENTREGABLE Nª 1 - SIMULADOR INTERACTIVO - PRECIO TOTAL de PRODUCTOS
+/* 
 let total = 0;
 let precioBirra = 0;
 let contador = 0;
@@ -121,4 +124,77 @@ function mostrarTotal() {
 
 //UTILIZO las funciones
 ingresarPrecio();
-mostrarTotal();
+mostrarTotal(); */
+
+
+
+
+//OBJETOS - estructura que permite agrupar/asociar varios datos de 1 mismo elemento.
+/* 
+OBJETOS - puede ser una computadora, una pantalla, una persona...(nombre/edad/color de pelo/ojos,etc)
+
+ESTRUCTURA --> {jey1: value1, key2: value2, keyn: valuen};
+
+*en vez de escribir:
+let nombre: "pepito";
+let edad: 30;
+let direccion: "Av";
+-->
+*/
+
+
+//OBJETO = persona1 - VALORES= nombre, edad, dire
+/* let persona1 = {
+    nombre: "Pepito",
+    edad: 30,
+    direccion: "Av siempre viva"
+}; */
+
+//para ACCEDER a datos dentro de 1 objeto -->
+//DOT NOTATION (objeto.propiedad/valor);
+/* console.log(persona1.nombre);
+//BREACK NOTATION (objeto["propiedad"]); - al ser "string", podemos usar VARIABLE
+console.log(persona1["direccion"]); */
+
+//para CAMBIAR dato dentro de 1 objeto -->
+/* persona1.nombre = "Thelma";
+persona1["edad"] = 103;
+
+console.log(persona1); */
+
+
+
+
+//FUNCIONES CONSTRUCTORAS = CREADORAS/GENERADORAS de OBJETOS (p/ no escribir 1x1)
+
+/* ESTRUCTURA de las FUNCIONES CONSTRUCTORAS
+1- CREO la MAQUINA:
+***IMPORTANTE*** - para distinguir FUNCION CONSTRUCTORA de otro tipo de funcion la 1er letra del nombre de 
+la "maquina creadora de objetos (funcion)", DEBE ir en Mayuscula. Ejemplo: function Persona()....
+
+function Maquina/Persona(parametro1(nombre) parametro2(edad), parametro3(direccion)){
+    this.name = parametro1(nombre);
+    this.age = parametro2(edad);
+    this.adress = parametro3(direccion);
+}
+
+const persona1 = new Persona(Pili, 45, "av");
+const persona1 = new Persona(Thelma, 32, "costa");
+console.log(persona1);
+
+*/
+
+//CREO LA MAQUINA creadora de OBJETOS
+function Persona(nombre, edad, direccion){
+    this.name = nombre;
+    this.age = edad;
+    this.address = direccion;
+}
+
+//CREO un NUEVO OBJETO DE la MAQUINA "P"ersona"
+const persona1 = new Persona("Thelma", 32, "La Costa");
+const persona2 = new Persona("Poli", 46, "AV lalal");
+
+//MUESTRO en CONSOLA
+console.log(persona1);
+console.log(persona2.name);
