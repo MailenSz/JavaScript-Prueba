@@ -185,7 +185,7 @@ console.log(persona1);
 */
 
 //CREO LA MAQUINA creadora de OBJETOS
-function Persona(nombre, edad, direccion){
+/* function Persona(nombre, edad, direccion){
     this.name = nombre;
     this.age = edad;
     this.address = direccion;
@@ -198,3 +198,75 @@ const persona2 = new Persona("Poli", 46, "AV lalal");
 //MUESTRO en CONSOLA
 console.log(persona1);
 console.log(persona2.name);
+ */
+
+
+//CLASES - JS
+// NUEVA FORMA DE ESCRIBIR EN JS.. se usa esta:
+
+/* class Producto{
+    constructor(nombre, imagen, precio, cantidad){
+        this.name = nombre;
+        this.img = imagen;
+        this.cost = precio;
+        this.cantidad = cantidad;
+    }
+
+    vender(){
+        this.cantidad = this.cantidad - 1; //esto para que vaya sacando 1 unidad de producto en cada "venta".
+    }
+}
+
+const producto1 = new Producto("TV", "http:...", 358000, 1);
+const producto2 = new Producto("Lavarropas", "http:..", 458784, 1);
+console.log(producto1);
+console.log(producto2); */
+
+
+
+
+
+//-------[]ARRAYS[]-------------------------------------------------------------------------------
+
+/* const nombre = ["Thelma", "Luisa", "Margo", "Lupe", "Poli"];
+console.log(nombre[2]);
+
+const numeros = [1, 3, 2, 5, 8, 4, 9];
+console.log(numeros[1] + numeros[3]); */
+
+//CLASE BEBIDAS
+class Bebidas{
+    constructor(tipo, nombre, precio){
+        this.tipo = tipo;
+        this.nombre = nombre;
+        this.precio = precio;
+    }
+    //NO ME SALE LO SGUIENTE, quizas tengo mal anotado, o no entendi.
+/*     metodo(){
+        console.log(`Hola, soy this.nombre`); -> como se escribe dentro de console.log para que aparezca lo que sea "this.nomre" x ej.
+    }; */
+}
+
+const bebida1 = new Bebidas("Cerveza", "Ipa SuperStar", "$ 390");
+console.log(bebida1);
+
+
+
+//ARRAYS - LISTADOS
+const cervezaArtesanal = ["IPA SuperStar", "Mexican LAGER", "SCOTCH Ness", "SweetHeart honey"];
+const tragos = ["Branca con cocaCola", "Branca Julep", "Cynar Pomelo", "Cynar Julep", "Campari Naranja", 
+                "Gin Tonic", "Aperol Spritz", "Cuba Libre", "Mojito", "Halawai Julep", "Serenillo", 
+                "Negroni", "Negroni Sbagliatto"];
+const sinAlcohol = ["Agua Mineral sin gas", "Agua con gas", "Gaseosas"];
+/* NO ME LO TOMA CON `` PARA QUE AL "console.log", ME QUEDEN LAS PALABRAS SEPARADAS como en gaseosas...
+const sinAlcohol = [`Agua Mineral sin gas, Agua con gas, Gaseosas`]; */
+const gaseosas = [`CocaCola, Coca-0-azucar`];
+
+sinAlcohol.pop();
+gaseosas.unshift("Sprite, Sprite sin azucar");
+gaseosas.push("Fanta, Fanta sin azucar");
+
+
+console.log(sinAlcohol + gaseosas);
+console.log(tragos.indexOf("Gin Tonic"));
+console.log(tragos.includes("Wiskey"));
