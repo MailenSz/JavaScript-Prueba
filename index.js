@@ -11,7 +11,9 @@ if((edad >= 18) && (edad != "")){
     console.log("Te esperamos en Halawai, para comer y beber sin alcohol!, veni a conocer las distintas opciones");
 }else{
     console.log("ERROR, ¿Que edad tenes?");
-} */
+} 
+    let edad = parseInt(prompt("¿Qué edad tenés?"));
+*/
 
 
 /* let entrada = prompt("Ingrese X...");
@@ -133,7 +135,7 @@ mostrarTotal(); */
 /* 
 OBJETOS - puede ser una computadora, una pantalla, una persona...(nombre/edad/color de pelo/ojos,etc)
 
-ESTRUCTURA --> {jey1: value1, key2: value2, keyn: valuen};
+ESTRUCTURA --> {Key1: value1, key2: value2, keyn: valuen};
 
 *en vez de escribir:
 let nombre: "pepito";
@@ -235,16 +237,16 @@ const numeros = [1, 3, 2, 5, 8, 4, 9];
 console.log(numeros[1] + numeros[3]); */
 
 //CLASE BEBIDAS
-class Bebidas{
+/* class Bebidas{
     constructor(tipo, nombre, precio){
         this.tipo = tipo;
         this.nombre = nombre;
         this.precio = precio;
     }
-    //NO ME SALE LO SGUIENTE, quizas tengo mal anotado, o no entendi.
-/*     metodo(){
-        console.log(`Hola, soy this.nombre`); -> como se escribe dentro de console.log para que aparezca lo que sea "this.nomre" x ej.
-    }; */
+    //NO ME SALE LO SIGUIENTE, quizas tengo mal anotado, o no entendi.
+    metodo(){
+        console.log("Hola, soy", this.nombre);  
+    };
 }
 
 const bebida1 = new Bebidas("Cerveza", "Ipa SuperStar", "$ 390");
@@ -258,8 +260,7 @@ const tragos = ["Branca con cocaCola", "Branca Julep", "Cynar Pomelo", "Cynar Ju
                 "Gin Tonic", "Aperol Spritz", "Cuba Libre", "Mojito", "Halawai Julep", "Serenillo", 
                 "Negroni", "Negroni Sbagliatto"];
 const sinAlcohol = ["Agua Mineral sin gas", "Agua con gas", "Gaseosas"];
-/* NO ME LO TOMA CON `` PARA QUE AL "console.log", ME QUEDEN LAS PALABRAS SEPARADAS como en gaseosas...
-const sinAlcohol = [`Agua Mineral sin gas, Agua con gas, Gaseosas`]; */
+//NO ME LO TOMA CON `` PARA QUE AL "console.log", ME QUEDEN LAS PALABRAS SEPARADAS como en gaseosas...
 const gaseosas = [`CocaCola, Coca-0-azucar`];
 
 sinAlcohol.pop();
@@ -269,4 +270,88 @@ gaseosas.push("Fanta, Fanta sin azucar");
 
 console.log(sinAlcohol + gaseosas);
 console.log(tragos.indexOf("Gin Tonic"));
+console.log(tragos.includes("Wiskey")); */
+
+
+//PRIMERA ENTREGA PROYECTO FINAL
+//CLASE - BebidaS
+/* class Bebida{
+    constructor(tipo, nombre, precio, cantidad){
+        this.tipo = tipo;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.cantidad = cantidad;
+    }
+
+//esta bien escrito ?, NO ME FUNCIONA
+// abajo lo LLAMO: console.log(Ipa.vender());         -NO ME SALE, ME PONE 0 y NAN 
+    vender(){
+        console.log(this.cantidad = this.cantidad - 1); //esto para que vaya sacando 1 unidad de Bebida en cada "venta".
+    }
+}
+
+//DECLARACION CERVEZAS  BIERHOUSE.
+const ipa = new Bebida("cerveza", `Ipa Super Star`, 390, 1);
+const rubia = new Bebida("cerveza", `Mexican Lager`, 330, 1);
+const roja = new Bebida("cerveza", `Scotch Ness`, 330, 1);
+const honey = new Bebida("cerveza", `Sweetheart Honey`, 330, 1);
+
+//DECLARACION TRAGOS
+const fernet = new Bebida(`trago`, `Branca con coca`, 500, 1);
+const brancaJulep = new Bebida(`trago`, `Branca julep`, 550, 1);
+const cynar = new Bebida(`trago`, `Cynar pomelo`, 500, 1);
+const cynarJulep = new Bebida(`trago`, `Cynar julep`, 550, 1);
+const negroni = new Bebida(`trago`, `Branca con coca`, 500, 1);
+const negroniSbagliatto = new Bebida(`trago`, `Branca julep`, 550, 1);
+const mojito = new Bebida(`trago`, `mojito`, 500, 1);
+const campari = new Bebida(`trago`, `Campari naranja`, 500, 1);
+const cubaLibre = new Bebida(`trago`, `Ron con coca`, 500, 1);
+const ginTonic = new Bebida(`trago`, `Gin con tonica`, 500, 1);
+const aperolSpritz = new Bebida(`trago`, `Aperol`, 500, 1);
+const Halawai = new Bebida(`trago`, `Isla tropical`, 600, 1);
+
+//DECLARACION BEBIDAS SIN ALCOHOL
+const agua = new Bebida(`sin alcohol`, `Agua Mineral sin gas`, 200, 1);
+const aguaConGas = new Bebida(`sin alcohol`, `Agua con gas`, 200, 1);
+
+const coca = new Bebida(`sin alcohol`, `Coca Cola`, 240, 1);
+const coca0 = new Bebida(`sin alcohol`, `Coca Cola cero azúcar`, 240, 1);
+const sprite = new Bebida(`sin alcohol`, `Sprite`, 240, 1);
+const sprite0 = new Bebida(`sin alcohol`, `Spirte cero azúcar`, 240, 1);
+const fanta = new Bebida(`sin alcohol`, `Fanta`, 240, 1);
+const fanta0 = new Bebida(`sin alcohol`, `Fanta cero azúcar`, 240, 1);
+
+console.log(ipa);
+console.log(sprite0);
+console.log(aguaConGas);
+
+// console.log(Ipa.vender());         -NO ME SALE, ME PONE 0 y NAN 
+
+//ARRAYS
+const cervezas = ["ipa", "rubia", "roja", "honey"];
+const tragos = ["fernet", "brancaJulep", "cynar", "cynarJulep",
+                    "negroni", "negroniSbagliatto", "mojito", "campari", 
+                    "cubaLiber", "ginTonic", "aperolSpritz", "Halawai",];
+
+const sinAlcohol = ["agua", "aguaConGas", "coca", "coca0",
+                        "sprite", "sprite0", "fanta", "fanta0"];
+
+const preciosBebidas = [240, 330, 390, 500, 550, 600];
+
+console.log(sinAlcohol);
+console.log(cervezas + tragos);
+console.log(tragos.indexOf("GinTonic"));
+console.log(tragos.indexOf("ginTonic"));
 console.log(tragos.includes("Wiskey"));
+
+console.log(tragos[3]);
+
+console.log(cervezas[0] + " " + preciosBebidas[2]);
+ */
+//no se como hacer para traer SOLO el NOMBRE y el PRECIO de una Bebida.
+//console.log(Bebida(this.nombre + this.precio));   -- o esta bien como lo hice?
+
+
+
+//FUNCIONES de ORDEN SUPERIOR
+
