@@ -144,12 +144,23 @@ console.log(cervezas[0] + " " + preciosBebidas[2]);
 //console.log(Bebida(this.nombre + this.precio));   -- o esta bien como lo hice?
 
 
+//FUNCIONES de ORDEN SUPERIOR
 
+const cerveza = [
+    {nombre:"ipa", precio: 390},
+    {nombre: "rubia", precio: 330},
+    {nombre: "roja", precio: 330},
+    {nombre: "honey", precio: 330}
+];
 
+let preciosActualizados = cerveza.map( item => {
+    return{
+        nombre: item.nombre, 
+        precio: item.precio + 50
+    };
+});
 
-
-
-
+console.log(preciosActualizados);
 
 
 
@@ -200,14 +211,6 @@ gaseosas.push("Fanta, Fanta sin azucar");
 console.log(sinAlcohol + gaseosas);
 console.log(tragos.indexOf("Gin Tonic"));
 console.log(tragos.includes("Wiskey")); */
-
-
-
-
-
-
-
-
 
 
 

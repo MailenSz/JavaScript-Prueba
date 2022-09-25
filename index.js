@@ -273,6 +273,8 @@ console.log(tragos.indexOf("Gin Tonic"));
 console.log(tragos.includes("Wiskey")); */
 
 
+
+
 //PRIMERA ENTREGA PROYECTO FINAL
 //CLASE - BebidaS
 /* class Bebida{
@@ -353,5 +355,23 @@ console.log(cervezas[0] + " " + preciosBebidas[2]);
 
 
 
+
+
 //FUNCIONES de ORDEN SUPERIOR
+
+const cervezas = [
+    {nombre:"ipa", precio: 390},
+    {nombre: "rubia", precio: 330},
+    {nombre: "roja", precio: 330},
+    {nombre: "honey", precio: 330}
+];
+
+let preciosActualizados = cervezas.map( item => {
+    return{
+        nombre: item.nombre, 
+        precio: item.precio + 50
+    };
+});
+
+console.log(preciosActualizados);
 
