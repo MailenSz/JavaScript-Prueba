@@ -358,8 +358,9 @@ console.log(cervezas[0] + " " + preciosBebidas[2]);
 
 
 //FUNCIONES de ORDEN SUPERIOR
+//DOM
 
-const cervezas = [
+/* const cervezas = [
     {nombre:"ipa", precio: 390},
     {nombre: "rubia", precio: 330},
     {nombre: "roja", precio: 330},
@@ -374,4 +375,7 @@ let preciosActualizados = cervezas.map( item => {
 });
 
 console.log(preciosActualizados);
+ */
+
+
 
