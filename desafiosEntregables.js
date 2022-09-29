@@ -1,41 +1,76 @@
+//EVENTOS - desafio 
+
+//EVENTO - MOUSE
+let contador = 0;
+
+function respuesta(){
+    console.log("Click");
+    contador = contador ++;
+}
+
+let saludo = document.getElementById("saludoJs");
+let boton = document.getElementById("boton");
+
+boton.addEventListener("mousedown", () =>{saludo.className = "amarilloJs"});
+boton.addEventListener("mouseover", () =>{saludo.className = "naranjaJs"});
+boton.addEventListener("mouseout", () =>{saludo.className = "rosaJs"});
+
+
+//EVENTO - TECLADO
+//let boton = document.getElementById("boton");
+let input = document.getElementById("nombreJs");
+
+input.addEventListener("keydown", () => console.log("keydown"));
+
+
+//FORMULARIO
+let formulario = document.getElementById("formularioJs");
+formulario.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+//donde se guarda la info que se pone en el formulario
+    let inputs = e.target.children;
+    
+    if (!inputs [0].value.includes("@")){
+        inputs [0].value = "";
+    }
+
+/*     console.log("funciona, hola!");
+ */});
+
+
+
+
+
+
+
+
+
 //DESAFIO DOM "INTERACTUAR CON HTML"
 
-//ME TRAIGO EL CONTENEDOR DE HTML
+//ME TRAIGO EL CONTENEDOR DE HTML = let contenedor
+//TENGO PRODUCTOS en un array = let cervezas
+    //CREO UN NUEVO DIV CON ELEMENTOS = let item
+    //CONTENIDO DE LA NUEVA DIV = item.innerHTML
+//DONDE LO AGREGO EN HTML - UBICACION "AL CONTENEDOR METELE EL ITEM" = append
+
 let contenedor = document.getElementById("contenedor");
 
-//TENGO PRODUCTOS en un array
 let cervezas = [{ id: 1, nombre: "IPA", precio: 390 },
                 { id: 2, nombre: "RUBIA", precio: 330 },
                 { id: 3, nombre: "HONEY", precio: 330 },
                 { id: 4, nombre: "ROJA", precio: 330 },];
 
-cervezas.forEach(cerveza => {
-    //CREO UN NUEVO DIV CON ELEMENTOS
+cervezas.forEach(cervezas => {
     let item = document.createElement("div");
-    //CONTENIDO DE LA NUEVA DIV
+
     item.innerHTML = 
         `<h2>Id: ${cervezas.id}</h2>
         <p>Cervezas: ${cervezas.nombre}</p>
         <b>$${cervezas.precio}</b>`;
-//DONDE LO AGREGO EN HTML - UBICACION "AL CONTENEDOR METELE EL ITEM"
+
 contenedor.append(item);
 })
-
-
-
-
-
-
-
-
-
-
-
-                
-
-
-
-
 
 
 

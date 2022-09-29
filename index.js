@@ -379,3 +379,39 @@ console.log(preciosActualizados);
 
 
 
+
+
+
+//DESAFIO DOM "INTERACTUAR CON HTML"
+
+//ME TRAIGO EL CONTENEDOR DE HTML
+/* let contenedor = document.getElementById("contenedor"); */
+
+//TENGO PRODUCTOS en un array
+/* let cervezas = [{ id: 1, nombre: "IPA", precio: 390 },
+                { id: 2, nombre: "RUBIA", precio: 330 },
+                { id: 3, nombre: "HONEY", precio: 330 },
+                { id: 4, nombre: "ROJA", precio: 330 },]; */
+
+/* cervezas.forEach(cervezas => { */
+    //CREO UN NUEVO DIV CON ELEMENTOS
+/*     let item = document.createElement("div"); */
+    //CONTENIDO DE LA NUEVA DIV
+/*     item.innerHTML = 
+        `<h2>Id: ${cervezas.id}</h2>
+        <p>Cervezas: ${cervezas.nombre}</p>
+        <b>$${cervezas.precio}</b>`; */
+
+//DONDE LO AGREGO EN HTML - UBICACION "AL CONTENEDOR METELE EL ITEM"
+/* contenedor.append(item);
+}) */
+
+
+
+
+
+
+
+
+
+
