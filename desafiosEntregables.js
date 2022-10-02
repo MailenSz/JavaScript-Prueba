@@ -1,4 +1,80 @@
-//EVENTOS - desafio 
+//STORAGE + JSON.stringify
+
+localStorage.setItem("tipo de bebida", "cerveza");
+localStorage.setItem("nombre", "IPA");
+localStorage.setItem("precio", 390);
+
+let tipoBebida = localStorage.getItem("tipo de bebida");
+let nombreBebida = localStorage.getItem("nombre");
+let precioBebida = localStorage.getItem("precio");
+let objeto = {nombre: "ROJA", precio: 330}
+
+
+console.log(tipoBebida);
+console.log(nombreBebida);
+console.log(precioBebida);
+
+
+for(let i = 0; i < localStorage.length; i++){
+    let key = localStorage.key(i);
+    console.log("tipo de bebida");
+    console.log("cerveza", localStorage.getItem("nombre"));
+}
+
+localStorage.setItem("objeto", JSON.stringify(objeto));
+let objet = JSON.parse(localStorage.getItem(typeof(objeto)));
+console.log(objeto);
+
+
+
+//CARRITO + BOTON para ELIMINAR
+
+const cervezas = [{ id: 1, nombre: "IPA", precio: 390 },
+                { id: 2, nombre: "RUBIA", precio: 330 },
+                { id: 3, nombre: "HONEY", precio: 330 },
+                { id: 4, nombre: "ROJA", precio: 330 },];
+
+let contenedor = document.getElementById("contenedor");
+let botonStorage = document.getElementById("botonStorage");
+
+let carrito = [];
+let carritoStorage = JSON.parse(localStorage.getItem("carrito"));
+
+if(carritoStorage){
+    carrito = carritoStorage;
+}
+
+cervezas.forEach(cervezas => {
+    let div = document.createElement("div");
+
+    div.innerHTML = `
+        <h2>ID: ${cervezas.id}</h2>
+        <p>Nombre: ${cervezas.nombre}</p>
+        <b>$ ${cervezas.precio}</b>
+        `;
+    
+    contenedor.append(div);
+});
+
+botonStorage.addEventListener("click", () => {
+    localStorage.clear();
+    contenedor.innerHTML = "";
+    alert("productos borrados del carrito");
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* //EVENTOS - desafio 
 
 //EVENTO - MOUSE
 let contador = 0;
@@ -36,7 +112,7 @@ formulario.addEventListener("submit", (e) => {
     }
 
 /*     console.log("funciona, hola!");
- */});
+ *//* }); */
 
 
 
@@ -54,7 +130,7 @@ formulario.addEventListener("submit", (e) => {
     //CONTENIDO DE LA NUEVA DIV = item.innerHTML
 //DONDE LO AGREGO EN HTML - UBICACION "AL CONTENEDOR METELE EL ITEM" = append
 
-let contenedor = document.getElementById("contenedor");
+/* let contenedor = document.getElementById("contenedor");
 
 let cervezas = [{ id: 1, nombre: "IPA", precio: 390 },
                 { id: 2, nombre: "RUBIA", precio: 330 },
@@ -72,7 +148,7 @@ cervezas.forEach(cervezas => {
 contenedor.append(item);
 })
 
-
+ */
 
 
 

@@ -412,6 +412,52 @@ console.log(preciosActualizados);
 
 
 
+/* 
+
+
+//EVENTOS - desafio 
+
+//EVENTO - MOUSE
+let contador = 0;
+
+function respuesta(){
+    console.log("Click");
+    contador = contador ++;
+}
+
+let saludo = document.getElementById("saludoJs");
+let boton = document.getElementById("boton");
+
+boton.addEventListener("mousedown", () =>{saludo.className = "amarilloJs"});
+boton.addEventListener("mouseover", () =>{saludo.className = "naranjaJs"});
+boton.addEventListener("mouseout", () =>{saludo.className = "rosaJs"});
+
+
+//EVENTO - TECLADO
+//let boton = document.getElementById("boton");
+let input = document.getElementById("nombreJs");
+
+input.addEventListener("keydown", () => console.log("keydown"));
+
+
+//FORMULARIO
+let formulario = document.getElementById("formularioJs");
+formulario.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+//donde se guarda la info que se pone en el formulario
+    let inputs = e.target.children;
+    
+    if (!inputs [0].value.includes("@")){
+        inputs [0].value = "";
+    }
+
+/*     console.log("funciona, hola!");
+ *//* }); */ 
 
 
 
+
+
+
+ 
