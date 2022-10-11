@@ -1,6 +1,6 @@
 //SEGUNDA ENTREGA del PROYECTO FINAL
 
-
+/* 
 //STORAGE + JSON.stringify
 
 localStorage.setItem("tipo de bebida", "cerveza");
@@ -26,12 +26,12 @@ for(let i = 0; i < localStorage.length; i++){
 
 localStorage.setItem("objeto", JSON.stringify(objeto));
 let objet = JSON.parse(localStorage.getItem(typeof(objeto)));
-console.log(objeto);
+console.log(objeto); */
 
 
 //CARRITO + BOTON para ELIMINAR
 
-const cervezas = [{ id: 1, nombre: "IPA", precio: 390 },
+/* const cervezas = [{ id: 1, nombre: "IPA", precio: 390 },
                 { id: 2, nombre: "RUBIA", precio: 330 },
                 { id: 3, nombre: "HONEY", precio: 330 },
                 { id: 4, nombre: "ROJA", precio: 330 },];
@@ -62,7 +62,7 @@ botonStorage.addEventListener("click", () => {
     localStorage.clear();
     contenedor.innerHTML = "";
     alert("productos borrados del carrito");
-})
+}) */
 
 
 
@@ -70,7 +70,7 @@ botonStorage.addEventListener("click", () => {
 //EVENTOS 
 
 //EVENTO - MOUSE
-let contador = 0;
+/* let contador = 0;
 
 function respuesta(){
     console.log("Carrito");
@@ -81,13 +81,13 @@ let boton = document.getElementById("botonStorage");
 
 boton.addEventListener("mousedown", () =>{boton.className = "amarilloJs"});
 boton.addEventListener("mouseover", () =>{boton.className = "naranjaJs"});
-boton.addEventListener("mouseout", () =>{boton.className = "rosaJs"});
+boton.addEventListener("mouseout", () =>{boton.className = "rosaJs"}); */
 
 
 
 //EVENTO - TECLADO
 //let boton = document.getElementById("boton");
-let input = document.getElementById("nombreJs");
+/* let input = document.getElementById("nombreJs");
 
 input.addEventListener("keydown", () => console.log("keydown"));
 
@@ -106,7 +106,7 @@ formulario.addEventListener("submit", (e) => {
 
 console.log("funciona, hola!");
 });
-
+ */
 
 
 //DOM "INTERACTUAR CON HTML"
@@ -117,7 +117,7 @@ console.log("funciona, hola!");
     //CONTENIDO DE LA NUEVA DIV = item.innerHTML
 //DONDE LO AGREGO EN HTML - UBICACION "AL CONTENEDOR METELE EL ITEM" = append
 
-let contenedOr = document.getElementById("contenedOr");
+/* let contenedOr = document.getElementById("contenedOr");
 
 let cervezAs = [{ id: 1, nombre: "IPA", precio: 390 },
                 { id: 2, nombre: "RUBIA", precio: 330 },
@@ -134,13 +134,13 @@ cervezas.forEach(cervezAs => {
 
 contenedOr.append(item);
 })
-
+ */
 
 
 
 
 //PARA COMPRAS HTML
-let cervezasArtesanales = [{ id: 1, nombre: "IPA", precio: 390,  },
+/* let cervezasArtesanales = [{ id: 1, nombre: "IPA", precio: 390,  },
                             { id: 2, nombre: "RUBIA", precio: 330 },
                             { id: 3, nombre: "HONEY", precio: 330 },
                             { id: 4, nombre: "ROJA", precio: 330 },];
@@ -156,7 +156,7 @@ item.innerHTML =
 
 //DONDE LO AGREGO EN HTML - UBICACION "AL CONTENEDOR METELE EL ITEM"
 contenedor.append(item);
-})
+}) */
 
 
 

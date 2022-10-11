@@ -1,53 +1,77 @@
-//DECLARACION CERVEZAS  BIERHOUSE.
-const ipa = new Bebida("cerveza", `Ipa Super Star`, 390, 1);
-const rubia = new Bebida("cerveza", `Mexican Lager`, 330, 1);
-const roja = new Bebida("cerveza", `Scotch Ness`, 330, 1);
-const honey = new Bebida("cerveza", `Sweetheart Honey`, 330, 1);
-
-//DECLARACION TRAGOS
-const fernet = new Bebida(`trago`, `Branca con coca`, 500, 1);
-const brancaJulep = new Bebida(`trago`, `Branca julep`, 550, 1);
-const cynar = new Bebida(`trago`, `Cynar pomelo`, 500, 1);
-const cynarJulep = new Bebida(`trago`, `Cynar julep`, 550, 1);
-const negroni = new Bebida(`trago`, `Branca con coca`, 500, 1);
-const negroniSbagliatto = new Bebida(`trago`, `Branca julep`, 550, 1);
-const mojito = new Bebida(`trago`, `mojito`, 500, 1);
-const campari = new Bebida(`trago`, `Campari naranja`, 500, 1);
-const cubaLibre = new Bebida(`trago`, `Ron con coca`, 500, 1);
-const ginTonic = new Bebida(`trago`, `Gin con tonica`, 500, 1);
-const aperolSpritz = new Bebida(`trago`, `Aperol`, 500, 1);
-const Halawai = new Bebida(`trago`, `Isla tropical`, 600, 1);
-
-//DECLARACION BEBIDAS SIN ALCOHOL
-const agua = new Bebida(`sin alcohol`, `Agua Mineral sin gas`, 200, 1);
-const aguaConGas = new Bebida(`sin alcohol`, `Agua con gas`, 200, 1);
-
-const coca = new Bebida(`sin alcohol`, `Coca Cola`, 240, 1);
-const coca0 = new Bebida(`sin alcohol`, `Coca Cola cero azúcar`, 240, 1);
-const sprite = new Bebida(`sin alcohol`, `Sprite`, 240, 1);
-const sprite0 = new Bebida(`sin alcohol`, `Spirte cero azúcar`, 240, 1);
-const fanta = new Bebida(`sin alcohol`, `Fanta`, 240, 1);
-const fanta0 = new Bebida(`sin alcohol`, `Fanta cero azúcar`, 240, 1);
-
-
-//ME TRAIGO EL CONTENEDOR DE HTML
-let contenedor = document.getElementById("contenedor"); 
-
-//TENGO PRODUCTOS en un array
-let cervezas = [{ id: 1, nombre: "IPA", precio: 390 },
+const cervezas = [{ id: 1, nombre: "IPA", precio: 390 },
                 { id: 2, nombre: "RUBIA", precio: 330 },
                 { id: 3, nombre: "HONEY", precio: 330 },
-                { id: 4, nombre: "ROJA", precio: 330 },]; 
+                { id: 4, nombre: "ROJA", precio: 330 },];
 
-cervezas.forEach(cervezas => { 
-    //CREO UN NUEVO DIV CON ELEMENTOS
-let item = document.createElement("div");
-    //CONTENIDO DE LA NUEVA DIV
-item.innerHTML = 
-    `<h2>Id: ${cervezas.id}</h2>
-    <p>Cervezas: ${cervezas.nombre}</p>
-    <b>$${cervezas.precio}</b>`;
+let contenedor = document.getElementById("contenedor");
+let botonEliminar = document.getElementById("botonCarritoEliminar");
 
-//DONDE LO AGREGO EN HTML - UBICACION "AL CONTENEDOR METELE EL ITEM"
-contenedor.append(item);
+/* let carrito = [];
+let botonEliminar = JSON.parse(localStorage.getItem("botonCarritoEliminar"));
+
+if(carritoStorage){
+    carrito = carritoStorage;
+}
+ */
+cervezas.forEach(cervezas => {
+    let div = document.createElement("div");
+
+    div.innerHTML = `
+        <h2>ID: ${cervezas.id}</h2>
+        <p>Nombre: ${cervezas.nombre}</p>
+        <b>$ ${cervezas.precio}</b>
+        `;
+    
+    contenedor.append(div);
+});
+
+botonStorage.addEventListener("click", () => {
+    localStorage.clear();
+    contenedor.innerHTML = "";
+    alert("productos borrados del carrito");
 })
+
+
+
+
+
+let contador = 0;
+
+function respuesta(){
+    console.log("carrito");
+    contador = contador ++;
+}
+
+let boton = document.getElementById("botonEliminarCarrito");
+
+boton.addEventListener("mousedown", () =>{boton.className = "amarilloJs"});
+boton.addEventListener("mouseover", () =>{boton.className = "naranjaJs"});
+boton.addEventListener("mouseout", () =>{boton.className = "rosaJs"});
+
+
+
+
+
+
+localStorage.setItem("tipo de bebida", "cerveza");
+localStorage.setItem("nombre", "IPA");
+localStorage.setItem("precio", 390);
+
+let tipoBebida = localStorage.getItem("tipo de bebida");
+let nombreBebida = localStorage.getItem("nombre");
+let precioBebida = localStorage.getItem("precio");
+let objeto = {nombre: "ROJA", precio: 330}
+
+console.log(tipoBebida);
+console.log(nombreBebida);
+console.log(precioBebida);
+
+for(let i = 0; i < localStorage.length; i++){
+    let key = localStorage.key(i);
+    console.log("tipo de bebida");
+    console.log("cerveza", localStorage.getItem("nombre"));
+}
+
+localStorage.setItem("objeto", JSON.stringify(objeto));
+let objet = JSON.parse(localStorage.getItem(typeof(objeto)));
+console.log(objeto);

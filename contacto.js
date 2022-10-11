@@ -1,6 +1,7 @@
 //FORMULARIO - no me anda.
 
 let miFormulario = document.getElementById("formulario");
+
 miFormulario.addEventListener("submit", (e) => {
     e.preventDefault();
     let input = e.target.children;
