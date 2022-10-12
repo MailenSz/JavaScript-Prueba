@@ -25,10 +25,14 @@ cervezas.forEach(cervezas => {
     contenedor.append(div);
 });
 
-botonStorage.addEventListener("click", () => {
+botonEliminar.addEventListener("click", () => {
     localStorage.clear();
     contenedor.innerHTML = "";
-    alert("productos borrados del carrito");
+    Swal.fire(
+        'Atencion!',
+        'Has eliminado el carrito!',
+        'warning'
+    )
 })
 
 
@@ -75,3 +79,8 @@ for(let i = 0; i < localStorage.length; i++){
 localStorage.setItem("objeto", JSON.stringify(objeto));
 let objet = JSON.parse(localStorage.getItem(typeof(objeto)));
 console.log(objeto);
+
+
+
+
+
