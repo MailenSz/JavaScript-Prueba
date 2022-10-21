@@ -1,0 +1,6 @@
+[
+    { "nombre": "IPA", "precio": 390,  "id": 1},
+    { "nombre": "RUBIA", "precio": 330, "id": 2},
+    { "nombre": "HONEY", "precio": 330,  "id": 3},
+    { "nombre": "ROJA", "precio": 330,  "id": 4 }
+]

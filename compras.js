@@ -13,16 +13,30 @@ if(carritoStorage){
     carrito = carritoStorage;
 }
  */
+let arrayCarrito = [];
+
+let productosUser = JSON.parse(localStorage.getItem("carrito"));
+
+if(productosUser){
+    arrayCarrito = productosUser;
+}
+
 cervezas.forEach(cervezas => {
     let div = document.createElement("div");
 
     div.innerHTML = `
-        <h2>ID: ${cervezas.id}</h2>
+        <h5>ID: ${cervezas.id}</h5>
         <p>Nombre: ${cervezas.nombre}</p>
         <b>$ ${cervezas.precio}</b>
+        <button id="${cervezas.id}"> comprar </button>
         `;
     
     contenedor.append(div);
+    let comprarElement = document.getElementById(cervezas.id);
+    comprarElement.addEventListener("click", () =>{
+        arrayCarrito.push(cervezas);
+        localStorage.setItem("carrito", JSON.stringify(arrayCarrito)); 
+    })
 });
 
 botonEliminar.addEventListener("click", () => {
@@ -42,11 +56,11 @@ botonEliminar.addEventListener("click", () => {
 let contador = 0;
 
 function respuesta(){
-    console.log("carrito");
+    console.log("carrito")
     contador = contador ++;
-}
+};
 
-let boton = document.getElementById("botonEliminarCarrito");
+let boton = document.getElementById("botonCarritoEliminar");
 
 boton.addEventListener("mousedown", () =>{boton.className = "amarilloJs"});
 boton.addEventListener("mouseover", () =>{boton.className = "naranjaJs"});
@@ -83,4 +97,36 @@ console.log(objeto);
 
 
 
+// FETCH + falsa API -> .json local.
+
+//para formulario ver "emailjs.com"
+
+const traerProductos = async () => {
+    const lista = document.getElementById("lista");
+
+    try{
+        const response = await fetch("./data.json");
+        const data = await response.json();
+
+        data.forEach((publicacion) => {
+            const li = document.getElementsByTagNamet("li");
+            li.innerHTML = `
+                <h2>${publicacion.nombre}</h2>
+                <p>${publicacion.precio}</p>
+            `;
+        
+        listado.append(li);
+        });
+
+    }catch(error){
+        console.log(error);
+    };
+
+    const response = await fetch("./data.json");
+    const data = await response.json();
+
+
+};
+
+traerProductos();
 
