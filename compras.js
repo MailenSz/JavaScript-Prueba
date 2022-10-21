@@ -101,7 +101,23 @@ console.log(objeto);
 
 //para formulario ver "emailjs.com"
 
-const traerProductos = async () => {
+const lista = document.getElementById("lista");
+
+fetch("./data.json")
+.then(response => response.json())
+.then(data => {
+    data.forEach(itemLista => {
+        const li = documento.createElement("li");
+        li.innerHTML = `
+            <h2>${itemLista.nombre}</h2>
+            <p>${itemLista.precio}</p>
+            <p>${itemLista.id}</p>
+        `;
+        
+        lista.append(li);
+    });
+})
+/* const traerProductos = async () => {
     const lista = document.getElementById("lista");
 
     try{
@@ -109,7 +125,7 @@ const traerProductos = async () => {
         const data = await response.json();
 
         data.forEach((publicacion) => {
-            const li = document.getElementsByTagNamet("li");
+            const li = document.getElements("ul");
             li.innerHTML = `
                 <h2>${publicacion.nombre}</h2>
                 <p>${publicacion.precio}</p>
@@ -129,4 +145,4 @@ const traerProductos = async () => {
 };
 
 traerProductos();
-
+ */
