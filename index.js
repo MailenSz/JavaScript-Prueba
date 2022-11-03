@@ -90,15 +90,3 @@ console.log(nombre, telefono);
 
 
 
-Swal.fire({
-    title: 'Hola!, que edad tenes?',
-    icon: 'question',
-    input: 'range',
-    inputLabel: 'Edad:',
-    inputAttributes: {
-        min: 13,
-        max: 80,
-        step: 1
-    },
-    inputValue: 18
-})

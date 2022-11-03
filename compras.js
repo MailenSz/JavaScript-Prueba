@@ -3,6 +3,9 @@ const cervezas = [{ id: 1, nombre: "IPA", precio: 390 },
                 { id: 3, nombre: "HONEY", precio: 330 },
                 { id: 4, nombre: "ROJA", precio: 330 },];
 
+/* localStorage.setItem("cerve", JSON.stringify(cervezas));
+ */
+
 let contenedor = document.getElementById("contenedor");
 let botonEliminar = document.getElementById("botonCarritoEliminar");
 
@@ -28,7 +31,7 @@ cervezas.forEach(cervezas => {
         <h5>ID: ${cervezas.id}</h5>
         <p>Nombre: ${cervezas.nombre}</p>
         <b>$ ${cervezas.precio}</b>
-        <button id="${cervezas.id}"> comprar </button>
+        <button id="${cervezas.id}"> comprar <i class="fas-fa-shopping-cart"></i> </button>
         `;
     
     contenedor.append(div);
@@ -61,6 +64,7 @@ function respuesta(){
 };
 
 let boton = document.getElementById("botonCarritoEliminar");
+let botonComprar = document.getElementsByName()
 
 boton.addEventListener("mousedown", () =>{boton.className = "amarilloJs"});
 boton.addEventListener("mouseover", () =>{boton.className = "naranjaJs"});
@@ -107,7 +111,7 @@ fetch("./data.json")
 .then(response => response.json())
 .then(data => {
     data.forEach(itemLista => {
-        const li = documento.createElement("li");
+        const li = document.createElement("li");
         li.innerHTML = `
             <h2>${itemLista.nombre}</h2>
             <p>${itemLista.precio}</p>
@@ -145,4 +149,28 @@ fetch("./data.json")
 };
 
 traerProductos();
+ */
+
+//CARRITO
+/* let productos = JSON.parse(localStorage.getItem("carrito"));
+
+let carrito = document.getElementById("productos");
+
+productos.forEach(cervezas => {
+    let div = document.createElement("div");
+
+    div.innerHTML = `
+        <h5>ID: ${cervezas.id}</h5>
+        <p>Nombre: ${cervezas.nombre}</p>
+        <b>$ ${cervezas.precio}</b>
+        <button id="${cervezas.id}"> eliminar </button>
+        `;
+    
+        carrito.append(div);
+
+    let comprarElement = document.getElementById(cervezas.id);
+    comprarElement.addEventListener("click", () =>{
+        localStorage.removeItem("carrito"); 
+    })
+});
  */

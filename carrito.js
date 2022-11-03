@@ -19,5 +19,3 @@ productos.forEach(cervezas => {
         localStorage.removeItem("carrito"); 
     })
 });
-
-
